@@ -1,0 +1,7 @@
+<p>O que vc tem:</p>
+<form action="">
+  <ng-container *ngFor="let option of field.radio_box.options;">
+    <input type="radio" [name]="option.name" [value]="option.value">{{option.text}}<br>
+  </ng-container>
+  <button type="submit" class="btn btn-success">Submit</button>
+</form>

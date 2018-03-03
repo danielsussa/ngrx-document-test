@@ -2,12 +2,11 @@
 <div *ngIf="analysis$ | async as analysis">
   <pre>{{analysis | json}}</pre>
 
-  <div *ngFor="let document of analysis.documents; let i = index;">
+  <div *ngFor="let document of analysis.documents;">
     <h2 [ngClass]="{selected:document.id == analysis.current_doc}" (click)="changeSelectedDoc(document.id)">{{document.title}}</h2>
-    <div *ngFor="let field of document.fields; let j = index;">
-      <div>{{field.title}}: <input type="text" name="fname"><button type="button" (click)="changeFieldValue('dadad',i,j)">change</button><br></div>
+    <div *ngFor="let field of document.fields;">
+      <app-field [field]="field"></app-field>
     </div>
   </div>
 
-  <app-input-check-box></app-input-check-box>
 </div>

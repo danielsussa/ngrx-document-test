@@ -1,0 +1,6 @@
+<div *ngIf="field.kind == 'text'">
+  <app-text [field]="field" (change)="getValue($event)"></app-text>
+</div>
+<div *ngIf="field.kind == 'radio'">
+  <app-radio-box [field]="field" (change)="getValue($event)"></app-radio-box>
+</div>

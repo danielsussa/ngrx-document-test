@@ -6,12 +6,15 @@ import {Field} from './field.interface';
 export type Action = AnalysisActions.All;
 
 const rg_field: Field[] = [
-  {id: 'first', title: 'Nome', value: null},
-  {id: 'last', title: 'Sobrenome', value: null}
+  {id: 'first', title: 'Nome', value: null, kind: 'text'},
+  {id: 'last', title: 'Sobrenome', value: null, kind: 'text'},
+  {id: 'est_civil', title: 'Estado Civil', value: null, kind: 'radio', radio_box: {selected: 1, options: [
+    {name: 'est_civ', value: 'solteiro', text: 'Solteiro'}, {name: 'est_civ', value: 'casado', text: 'Casado'}
+    ]}},
 ]
 
 const cpf_field: Field[] = [
-  {id: 'number', title: 'Número CPF', value: null},
+  {id: 'number', title: 'Número CPF', value: null, kind: 'text'},
 ]
 
 const documents: Document[] = [
