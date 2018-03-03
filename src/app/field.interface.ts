@@ -3,22 +3,14 @@ export interface Field {
   kind: string;
   title: string;
   value: any;
-  radio_box?: RadioBoxInput;
-  check_box?: CheckBoxInput;
+  radio_box?: Options[];
+  check_box?: Options[];
 }
 
-export interface CheckBoxInput {
-  selected: number[];
-  options: Options[];
-}
-
-export interface RadioBoxInput {
-  selected: number;
-  options: Options[];
-}
 
 export interface Options {
-  name: string;
+  name?: string;
   value: string;
   text: string;
+  index: number;
 }

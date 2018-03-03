@@ -1,5 +1,6 @@
-import {Component, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Field} from '../../field.interface';
+import {AbstractControl, FormControl, FormGroup} from '@angular/forms';
 
 export interface RadioBox {
   title: string;
@@ -13,12 +14,24 @@ export interface RadioBox {
 export class RadioBoxComponent implements OnInit {
 
   @Input() field: Field;
-  @Output() out: Field;
+  @Output() change: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() { }
 
+  form: FormGroup
+
+
   ngOnInit() {
-    console.log(this.field);
+
+    const stuff: { [key: string]: AbstractControl; } = {};
+    stuff[this.field.id] = new FormControl('')
+
+    this.form = new FormGroup(stuff);
+  }
+
+  onSubmit() {
+    this.field.value = this.form.get(this.field.id).value;
+    this.change.emit(this.field);
   }
 
 }

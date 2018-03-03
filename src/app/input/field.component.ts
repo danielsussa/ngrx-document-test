@@ -17,7 +17,6 @@ export class FieldComponent implements OnInit {
   }
 
   getValue(value) {
-    console.log('1', value);
   }
 
 }

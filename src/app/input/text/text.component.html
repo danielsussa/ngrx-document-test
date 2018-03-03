@@ -1,3 +1,8 @@
 <div>{{field.title}}:
-  <input type="text" [name]="field.name" ngModel><button type="button" (click)="changeFieldValue('dadad')">change</button><br>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="valueInput" [name]="field.name" ngModel>
+    <button type="submit">Submit</button>
+    <br>
+  </form>
+
 </div>

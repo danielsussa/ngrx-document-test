@@ -8,9 +8,9 @@ export type Action = AnalysisActions.All;
 const rg_field: Field[] = [
   {id: 'first', title: 'Nome', value: null, kind: 'text'},
   {id: 'last', title: 'Sobrenome', value: null, kind: 'text'},
-  {id: 'est_civil', title: 'Estado Civil', value: null, kind: 'radio', radio_box: {selected: 1, options: [
-    {name: 'est_civ', value: 'solteiro', text: 'Solteiro'}, {name: 'est_civ', value: 'casado', text: 'Casado'}
-    ]}},
+  {id: 'est_civil', title: 'Estado Civil', value: null, kind: 'radio', radio_box: [
+      {value: 'solteiro', text: 'Solteiro', index: 0}, {value: 'casado', text: 'Casado', index: 1}
+    ]},
 ]
 
 const cpf_field: Field[] = [

@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Field} from '../../field.interface';
+import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-text',
@@ -11,15 +12,18 @@ export class TextComponent implements OnInit {
   @Input() field: Field;
   @Output() change: EventEmitter<any> = new EventEmitter<any>();
 
-  value: any;
 
   constructor() { }
+
+  form = new FormGroup({
+    valueInput: new FormControl(''),
+  });
 
   ngOnInit() {
   }
 
-  changeFieldValue(value) {
-    this.field.value = value;
+  onSubmit() {
+    this.field.value = this.form.get('valueInput').value;
     this.change.emit(this.field);
   }
 }
