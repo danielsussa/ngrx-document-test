@@ -1,7 +1,7 @@
 import {Field} from './field.interface';
 
 export interface Document {
-  id: string;
+  key: string;
   title: string;
   fields: Field[];
 }

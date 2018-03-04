@@ -1,6 +1,6 @@
 export interface Field {
-  id: string;
-  kind: string;
+  key: string;
+  type: string;
   title: string;
   value: any;
   radio_box?: Options[];

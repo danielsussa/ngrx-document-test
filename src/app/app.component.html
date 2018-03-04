@@ -3,7 +3,7 @@
   <pre>{{analysis | json}}</pre>
 
   <div *ngFor="let document of analysis.documents;">
-    <h2 [ngClass]="{selected:document.id == analysis.current_doc}" (click)="changeSelectedDoc(document.id)">{{document.title}}</h2>
+    <h2 [ngClass]="{selected:document.key == analysis.current_doc}" (click)="changeSelectedDoc(document.key)">{{document.title}}</h2>
     <div *ngFor="let field of document.fields;">
       <app-field [field]="field"></app-field>
     </div>

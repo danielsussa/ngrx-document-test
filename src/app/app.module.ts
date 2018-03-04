@@ -24,6 +24,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
+
+
+
     StoreModule.forRoot({
       analysis: analysisReducer
     })

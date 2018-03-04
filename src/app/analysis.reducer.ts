@@ -6,20 +6,20 @@ import {Field} from './field.interface';
 export type Action = AnalysisActions.All;
 
 const rg_field: Field[] = [
-  {id: 'first', title: 'Nome', value: null, kind: 'text'},
-  {id: 'last', title: 'Sobrenome', value: null, kind: 'text'},
-  {id: 'est_civil', title: 'Estado Civil', value: null, kind: 'radio', radio_box: [
+  {key: 'first', title: 'Nome', value: null, type: 'text'},
+  {key: 'last', title: 'Sobrenome', value: null, type: 'text'},
+  {key: 'est_civil', title: 'Estado Civil', value: null, type: 'radio', radio_box: [
       {value: 'solteiro', text: 'Solteiro', index: 0}, {value: 'casado', text: 'Casado', index: 1}
     ]},
 ]
 
 const cpf_field: Field[] = [
-  {id: 'number', title: 'Número CPF', value: null, kind: 'text'},
+  {key: 'number', title: 'Número CPF', value: null, type: 'text'},
 ]
 
 const documents: Document[] = [
-  {id: 'rg', title: 'Registro Geral', fields: rg_field},
-  {id: 'cpf', title: 'Comprovante CPF', fields: cpf_field}
+  {key: 'rg', title: 'Registro Geral', fields: rg_field},
+  {key: 'cpf', title: 'Comprovante CPF', fields: cpf_field}
 ]
 
 const defaultState: Analysis =  {

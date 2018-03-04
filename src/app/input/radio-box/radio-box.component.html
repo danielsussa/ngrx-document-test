@@ -1,7 +1,7 @@
 <p>O que vc tem:</p>
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
   <ng-container *ngFor="let option of field.radio_box;">
-    <input type="radio" [formControlName]="field.id" [name]="field.id" [value]="option.index" ngModel>{{option.text}}<br>
+    <input type="radio" [formControlName]="field.key" [name]="field.key" [value]="option.index" ngModel>{{option.text}}<br>
   </ng-container>
   <button type="submit" class="btn btn-success">Submit</button>
 </form>

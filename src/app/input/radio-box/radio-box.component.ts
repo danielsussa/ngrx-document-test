@@ -24,13 +24,13 @@ export class RadioBoxComponent implements OnInit {
   ngOnInit() {
 
     const stuff: { [key: string]: AbstractControl; } = {};
-    stuff[this.field.id] = new FormControl('')
+    stuff[this.field.key] = new FormControl('')
 
     this.form = new FormGroup(stuff);
   }
 
   onSubmit() {
-    this.field.value = this.form.get(this.field.id).value;
+    this.field.value = this.form.get(this.field.key).value;
     this.change.emit(this.field);
   }
 
