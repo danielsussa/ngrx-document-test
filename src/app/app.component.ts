@@ -27,4 +27,9 @@ export class AppComponent implements OnInit{
   constructor(private store: Store<AppState>) {
     this.analysis$ = this.store.select('analysis');
   }
+
+  changeSelectedDoc(id: string) {
+    this.store.dispatch(new AnalysisActions.SelectDoc(id));
+  }
+
 }
