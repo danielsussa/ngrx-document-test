@@ -10,6 +10,7 @@ import { RadioBoxComponent } from './input/radio-box/radio-box.component';
 import { FieldComponent } from './input/field.component';
 import { TextComponent } from './input/text/text.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 
 
 @NgModule({
@@ -25,11 +26,10 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     ReactiveFormsModule,
     FormsModule,
 
-
-
     StoreModule.forRoot({
       analysis: analysisReducer
-    })
+    }),
+    StoreDevtoolsModule.instrument({})
   ],
   exports: [
     FormsModule,

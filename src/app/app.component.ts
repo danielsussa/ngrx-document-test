@@ -32,4 +32,8 @@ export class AppComponent implements OnInit{
     this.store.dispatch(new AnalysisActions.SelectDoc(id));
   }
 
+  changeFieldValue(id: string) {
+
+  }
+
 }
