@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Field} from '../field.interface';
 
 @Component({
@@ -9,7 +9,7 @@ import {Field} from '../field.interface';
 export class FieldComponent implements OnInit {
 
   @Input() field: Field;
-  @Output() out: Field;
+  @Output() out: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() { }
 
@@ -17,6 +17,7 @@ export class FieldComponent implements OnInit {
   }
 
   getValue(value) {
+    this.out.emit(value);
   }
 
 }

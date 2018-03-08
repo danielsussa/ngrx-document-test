@@ -5,6 +5,7 @@ import {Store} from '@ngrx/store';
 import * as AnalysisActions from './analysis.actions';
 import {Field} from './field.interface';
 import {AppState} from './state';
+import {ChangeFieldValue} from './analysis.actions';
 
 
 
@@ -32,8 +33,8 @@ export class AppComponent implements OnInit{
     this.store.dispatch(new AnalysisActions.SelectDoc(id));
   }
 
-  changeFieldValue(id: string) {
-
+  changeFieldValue(value, i, j) {
+    this.store.dispatch(new AnalysisActions.ChangeFieldValue(value, i, j));
   }
 
 }

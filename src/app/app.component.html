@@ -2,10 +2,10 @@
 <div *ngIf="analysis$ | async as analysis">
   <pre>{{analysis | json}}</pre>
 
-  <div *ngFor="let document of analysis.documents;">
+  <div *ngFor="let document of analysis.documents;let i = index;">
     <h2 [ngClass]="{selected:document.key == analysis.current_doc}" (click)="changeSelectedDoc(document.key)">{{document.title}}</h2>
-    <div *ngFor="let field of document.fields;">
-      <app-field [field]="field"></app-field>
+    <div *ngFor="let field of document.fields;let j = index;">
+      <app-field [field]="field" (out)="changeFieldValue($event,i,j)"></app-field>
     </div>
   </div>
 

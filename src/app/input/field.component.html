@@ -1,6 +1,6 @@
 <div *ngIf="field.type == 'text'">
-  <app-text [field]="field" (change)="getValue($event)"></app-text>
+  <app-text [field]="field" (out)="getValue($event)"></app-text>
 </div>
 <div *ngIf="field.type == 'radio'">
-  <app-radio-box [field]="field" (change)="getValue($event)"></app-radio-box>
+  <app-radio-box [field]="field" (out)="getValue($event)"></app-radio-box>
 </div>

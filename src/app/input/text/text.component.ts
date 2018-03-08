@@ -10,7 +10,7 @@ import {FormControl, FormGroup} from '@angular/forms';
 export class TextComponent implements OnInit {
 
   @Input() field: Field;
-  @Output() change: EventEmitter<any> = new EventEmitter<any>();
+  @Output() out: EventEmitter<any> = new EventEmitter<any>();
 
 
   constructor() { }
@@ -24,6 +24,6 @@ export class TextComponent implements OnInit {
 
   onSubmit() {
     this.field.value = this.form.get('valueInput').value;
-    this.change.emit(this.field);
+    this.out.emit(this.field.value);
   }
 }

@@ -39,11 +39,11 @@ export function analysisReducer(state: Analysis = defaultState, action: Action) 
     case AnalysisActions.SELECT_DOCUMENT:
       return mergeState(state, {current_doc: action.id});
     case AnalysisActions.FIELD_VALUE:
-
-      const newState = state;
-      newState.documents[action.docIndex].fields[action.fieldIndex].value = action.value;
-
-      return mergeState(state, newState);
+      const docs = state.documents
+      docs[action.docIndex].fields[action.fieldIndex].value = action.value;
+      mergeState(state, {documents: docs});
+      console.log(state);
+      return state
     case AnalysisActions.NEW_ANALYSIS:
       return state;
   }
