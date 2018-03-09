@@ -41,15 +41,11 @@ export function analysisReducer(state: Analysis = defaultState, action: Action) 
     case AnalysisActions.SELECT_DOCUMENT:
       return mergeState(state, {current_doc: action.id});
     case AnalysisActions.FIELD_VALUE:
-      //const newState = update(state, {documents: {[action.docIndex]: {fields: {[action.fieldIndex]: {value: {$set: action.value}}}}}});
-
-      const array = [{key: 12}, {dada: 'danio'}]
-      console.log(array)
-      const newDocs = Object.assign([...state.documents], {[action.docIndex]: {key: 'dadad'}})
-
-      return mergeState(state, {documents: newDocs});
+      const newState = JSON.parse(JSON.stringify(state))
+      newState.documents[action.docIndex].fields[action.fieldIndex].value = action.value;
+      return newState;
     case AnalysisActions.NEW_ANALYSIS:
       return state;
-  }
+
 
 }

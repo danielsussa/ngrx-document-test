@@ -1,6 +1,6 @@
 <div>{{field.title}}:
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <input type="text" formControlName="valueInput" [name]="field.name" ngModel>
+    <input type="text" formControlName="valueInput" [name]="field.name" [value]="field.value" ngModel>
     <button type="submit">Submit</button>
     <br>
   </form>
