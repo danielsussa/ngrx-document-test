@@ -2,6 +2,8 @@ import * as AnalysisActions from './analysis.actions';
 import {Analysis} from './analysis.interface';
 import {Document} from './document.interface';
 import {Field} from './field.interface';
+import update from 'immutability-helper';
+
 
 export type Action = AnalysisActions.All;
 
@@ -39,11 +41,13 @@ export function analysisReducer(state: Analysis = defaultState, action: Action) 
     case AnalysisActions.SELECT_DOCUMENT:
       return mergeState(state, {current_doc: action.id});
     case AnalysisActions.FIELD_VALUE:
-      const docs = state.documents
-      docs[action.docIndex].fields[action.fieldIndex].value = action.value;
-      mergeState(state, {documents: docs});
-      console.log(state);
-      return state
+      //const newState = update(state, {documents: {[action.docIndex]: {fields: {[action.fieldIndex]: {value: {$set: action.value}}}}}});
+
+      const array = [{key: 12}, {dada: 'danio'}]
+      console.log(array)
+      const newDocs = Object.assign([...state.documents], {[action.docIndex]: {key: 'dadad'}})
+
+      return mergeState(state, {documents: newDocs});
     case AnalysisActions.NEW_ANALYSIS:
       return state;
   }

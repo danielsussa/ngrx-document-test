@@ -16,7 +16,7 @@ import {ChangeFieldValue} from './analysis.actions';
 })
 
 
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
 
   analysis$: Observable<Analysis>;
 

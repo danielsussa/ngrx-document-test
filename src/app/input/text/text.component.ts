@@ -23,7 +23,6 @@ export class TextComponent implements OnInit {
   }
 
   onSubmit() {
-    this.field.value = this.form.get('valueInput').value;
-    this.out.emit(this.field.value);
+    this.out.emit(this.form.get('valueInput').value);
   }
 }
